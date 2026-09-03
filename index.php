@@ -143,7 +143,8 @@ $filas = $stmt->fetchAll();
                                             </span>
                                         </td>
                                         <td>
-                                            <a href="detalle.php?id=<?= $fila['id'] ?>" class="btn btn-sm btn-primary">Ver detalle</a>
+                                            <a href="detalle.php?id=<?= $fila['id'] ?>" class="btn btn-sm btn-primary">Ver</a>
+<a href="eliminar.php?id=<?= $fila['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este ensayo?');">Eliminar</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
