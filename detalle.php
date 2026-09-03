@@ -21,10 +21,19 @@ if ($id) {
 </head>
 <body class="bg-light">
 <div class="container py-5">
-    <?php if ($ensayoEncontrado): ?>
-        <h2>Detalle del Ensayo #<?= $ensayoEncontrado['id'] ?></h2>
-        <p><strong>Microorganismo:</strong> <?= htmlspecialchars($ensayoEncontrado['microorganismo']) ?></p>
-        <p><strong>Resultado:</strong> <?= htmlspecialchars($ensayoEncontrado['resultado']) ?></p>
+ <?php if ($ensayoEncontrado): ?>
+    <h2>Detalle del Ensayo #<?= $ensayoEncontrado['id'] ?></h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <p><strong>Microorganismo:</strong> <?= htmlspecialchars($ensayoEncontrado['microorganismo']) ?></p>
+            <p><strong>Tipo:</strong> <?= htmlspecialchars($ensayoEncontrado['tipo']) ?></p>
+            <p><strong>Medio de Cultivo:</strong> <?= htmlspecialchars($ensayoEncontrado['medio']) ?></p>
+            <p><strong>Temperatura:</strong> <?= $ensayoEncontrado['temperatura'] ?> °C</p>
+            <p><strong>Tiempo de Incubación:</strong> <?= $ensayoEncontrado['horas'] ?> horas</p>
+            <p><strong>Resultado:</strong> <span class="badge bg-info text-dark"><?= htmlspecialchars($ensayoEncontrado['resultado']) ?></span></p>
+            <p><strong>Fecha de Registro:</strong> <?= $ensayoEncontrado['fecha_registro'] ?></p>
+        </div>
+    </div>
     <?php else: ?>
         <p>El ensayo no existe.</p>
     <?php endif; ?>
